@@ -1,0 +1,3 @@
+fastrtc[tts]
+twilio
+python-dotenv
