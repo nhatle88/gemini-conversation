@@ -1,3 +1,4 @@
 fastrtc[tts]
 twilio
 python-dotenv
+google-genai
