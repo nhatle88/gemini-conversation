@@ -186,7 +186,7 @@ if __name__ == "__main__":
     from gradio.utils import get_space
     import gradio as gr
 
-    if not get_space():
+    if get_space():
         with gr.Blocks() as demo:
             gr.HTML(
                 """
