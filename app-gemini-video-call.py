@@ -10,6 +10,15 @@ import numpy as np
 import google.generativeai as genai
 # from google.generativeai import live  # explicit import to expose live
 from dotenv import load_dotenv
+
+load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
+
+# Retrieve and print the API key.
+api_key = os.getenv("GEMINI_API_KEY")
+print("API Key:", api_key)
+if not api_key:
+    print("GEMINI_API_KEY is not set. Check your .env file and its location.")
+
 from fastrtc import (
     AsyncAudioVideoStreamHandler,
     Stream,
@@ -38,8 +47,6 @@ def encode_image(data: np.ndarray) -> dict:
     return {"mime_type": "image/jpeg", "data": base64_str}
 
 
-# Python
-# python
 class GeminiHandler(AsyncAudioVideoStreamHandler):
     def __init__(self) -> None:
         super().__init__(
